@@ -1,0 +1,116 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4%;
+    height: var(--header-height);
+    background-color: var(--background-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    transition: background-color var(--transition-speed);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.navbar-logo-img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.navLinks {
+    display: flex;
+    gap: 20px;
+}
+
+.navLink {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color var(--transition-speed);
+}
+
+.navLink:hover,
+.navLink.active {
+    color: var(--text-primary);
+}
+
+.rightSection {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.searchContainer {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    padding: 5px;
+    border: 1px solid transparent;
+    transition: all var(--transition-speed);
+}
+
+.searchContainer.active {
+    background-color: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--text-secondary);
+}
+
+.searchInput {
+    background: transparent;
+    border: none;
+    color: white;
+    padding: 5px;
+    width: 0;
+    opacity: 0;
+    transition: all var(--transition-speed);
+    outline: none;
+}
+
+.searchInput.open {
+    width: 200px;
+    opacity: 1;
+}
+
+.iconButton {
+    background: none;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mobileMenuBtn {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .navLinks {
+        display: none;
+        position: absolute;
+        top: var(--header-height);
+        left: 0;
+        width: 100%;
+        background-color: var(--background-color);
+        flex-direction: column;
+        padding: 20px;
+        border-top: 1px solid var(--surface-color);
+    }
+
+    .navLinks.open {
+        display: flex;
+    }
+
+    .mobileMenuBtn {
+        display: block;
+    }
+}

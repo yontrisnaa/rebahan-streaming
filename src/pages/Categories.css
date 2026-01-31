@@ -1,0 +1,135 @@
+.categoriesContainer {
+    padding: 40px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.categoriesHeader {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.categoriesHeader h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, var(--primary-color), #ff6b9d);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.categoriesHeader p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+}
+
+.categoriesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.categoryCard {
+    background: var(--surface-color);
+    border-radius: var(--border-radius);
+    padding: 35px 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    text-decoration: none;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.categoryCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--category-color);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.categoryCard:hover::before {
+    transform: scaleX(1);
+}
+
+.categoryCard:hover {
+    transform: translateY(-5px);
+    border-color: var(--category-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.categoryIcon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--category-color), transparent);
+    color: var(--category-color);
+    transition: all 0.3s ease;
+}
+
+.categoryCard:hover .categoryIcon {
+    transform: scale(1.1) rotate(5deg);
+    background: var(--category-color);
+    color: white;
+}
+
+.categoryCard h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.categoryCard p {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+    .categoriesContainer {
+        padding: 30px 15px;
+    }
+
+    .categoriesHeader h1 {
+        font-size: 2rem;
+    }
+
+    .categoriesGrid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
+    .categoryCard {
+        padding: 25px 15px;
+    }
+
+    .categoryIcon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .categoryIcon svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .categoryCard h3 {
+        font-size: 1.2rem;
+    }
+
+    .categoryCard p {
+        font-size: 0.85rem;
+    }
+}

@@ -1,0 +1,36 @@
+:root {
+  --primary-color: #e50914;
+  --background-color: #141414;
+  --surface-color: #1f1f1f;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --transition-speed: 0.3s;
+  --border-radius: 4px;
+  --container-width: 1200px;
+  --header-height: 70px;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-primary);
+  font-family: var(--font-family);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-speed);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
