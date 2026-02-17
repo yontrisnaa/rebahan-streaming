@@ -1,4 +1,4 @@
-const BASE_URL = 'https://zeldvorik.ru/apiv3/api.php';
+const BASE_URL = 'https://foodcash.com.br/sistema/apiv4/api.php';
 
 const fetchFromApi = async (params) => {
   try {
